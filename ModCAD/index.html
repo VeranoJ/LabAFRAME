@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Industrial - A-Frame</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene background="color: #ECECEC">
+        
+        <!-- Assets -->
+        <a-assets>
+            <a-asset-item id="modeloIndustrial" src="modelo-industrial.glb"></a-asset-item>
+        </a-assets>
+        
+        <!-- Modelo CAD -->
+        <a-entity 
+            gltf-model="#modeloIndustrial" 
+            position="0 0 -5"
+            scale="1 1 1">
+        </a-entity>
+        
+        <!-- Iluminación -->
+        <a-light type="ambient" color="#BBBBBB"></a-light>
+        <a-light type="directional" position="2 3 2" intensity="1"></a-light>
+        
+        <!-- Cámara y controles -->
+        <a-entity 
+            camera 
+            look-controls 
+            wasd-controls 
+            position="0 1.6 5">
+        </a-entity>
+        
+        <!-- Piso de referencia -->
+        <a-plane 
+            position="0 0 0" 
+            rotation="-90 0 0" 
+            width="20" 
+            height="20" 
+            color="#CCCCCC">
+        </a-plane>
+        
+    </a-scene>
+</body>
+</html>
