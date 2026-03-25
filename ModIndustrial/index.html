@@ -1,124 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Banda Transportadora Industrial - A-Frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda Transportadora Industrial - A-Frame XR</title>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
     <a-scene background="color: #ECECEC">
       
-      <!-- Soportes de la banda transportadora -->
-      <a-entity id="estructuraSoportes" position="0 0 0">
-      
-        <a-box position="-6 1.25 2" 
-               width="2" height="2.5" depth="1" 
-               color="#b0abaf"></a-box>
+      <!-- ============================================ -->
+      <!-- WRAPPER PRINCIPAL: Contiene TODO el modelo   -->
+      <!-- Posicionado en Z=-12 para estar frente al    -->
+      <!-- usuario en modo VR (origen en 0,0,0)         -->
+      <!-- ============================================ -->
+      <a-entity id="escenaIndustrial" position="0 0 -12">
         
+        <!-- ============================================ -->
+        <!-- GRUPO 1: ESTRUCTURA DE SOPORTES              -->
+        <!-- ============================================ -->
+        <a-entity id="estructuraSoportes" position="0 0 0">
+          <!-- Soporte frontal izquierdo -->
+          <a-box position="-6 1.25 2" 
+                 width="2" height="2.5" depth="1" 
+                 color="#b0abaf"></a-box>
+          
+          <!-- Soporte frontal derecho -->
+          <a-box position="5 1.25 2" 
+                 width="2" height="2.5" depth="1" 
+                 color="#b0abaf"></a-box>
+          
+          <!-- Soporte trasero izquierdo -->
+          <a-box position="-6 1.25 -4" 
+                 width="2" height="2.5" depth="1" 
+                 color="#b0abaf"></a-box>
+          
+          <!-- Soporte trasero derecho -->
+          <a-box position="5 1.25 -4" 
+                 width="2" height="2.5" depth="1" 
+                 color="#b0abaf"></a-box>
+        </a-entity>
         
-        <a-box position="5 1.25 2" 
-               width="2" height="2.5" depth="1" 
-               color="#b0abaf"></a-box>
+        <!-- ============================================ -->
+        <!-- GRUPO 2: SISTEMA DE RODILLOS                 -->
+        <!-- ============================================ -->
+        <a-entity id="sistemaRodillos" position="0 0 0">
+          <!-- Rodillo 1 -->
+          <a-cylinder position="-6 1.5 -1" 
+                      radius="0.4" height="5" 
+                      rotation="90 0 0" 
+                      color="#4d4c4d"></a-cylinder>
+          
+          <!-- Rodillo 2 -->
+          <a-cylinder position="-3.2 1.5 -1" 
+                      radius="0.4" height="5" 
+                      rotation="90 0 0" 
+                      color="#4d4c4d"></a-cylinder>
+          
+          <!-- Rodillo 3 -->
+          <a-cylinder position="-0.2 1.5 -1" 
+                      radius="0.4" height="5" 
+                      rotation="90 0 0" 
+                      color="#4d4c4d"></a-cylinder>
+          
+          <!-- Rodillo 4 -->
+          <a-cylinder position="2.7 1.5 -1" 
+                      radius="0.4" height="5" 
+                      rotation="90 0 0" 
+                      color="#4d4c4d"></a-cylinder>
+          
+          <!-- Rodillo 5 -->
+          <a-cylinder position="5 1.5 -1" 
+                      radius="0.4" height="5" 
+                      rotation="90 0 0" 
+                      color="#4d4c4d"></a-cylinder>
+        </a-entity>
         
+        <!-- ============================================ -->
+        <!-- GRUPO 3: BANDA TRANSPORTADORA                -->
+        <!-- ============================================ -->
+        <a-entity id="bandaTransportadora" position="0 0 0">
+          <!-- Superficie de la banda -->
+          <a-plane position="-0.4 2.02 -1" 
+                   width="11" height="5" 
+                   rotation="-90 0 0" 
+                   color="#40b041"></a-plane>
+        </a-entity>
         
-        <a-box position="-6 1.25 -4" 
-               width="2" height="2.5" depth="1" 
-               color="#b0abaf"></a-box>
+        <!-- ============================================ -->
+        <!-- GRUPO 4: ESFERAS TRANSPORTADAS               -->
+        <!-- ============================================ -->
+        <a-entity id="esferas" position="0 0 0">
+          <!-- Esfera 1 -->
+          <a-sphere position="-4.5 2.76 -1.14" 
+                    radius="0.8" 
+                    color="#d34545"></a-sphere>
+          
+          <!-- Esfera 2 -->
+          <a-sphere position="-2.15 2.76 -1.13" 
+                    radius="0.8" 
+                    color="#d34545"></a-sphere>
+          
+          <!-- Esfera 3 -->
+          <a-sphere position="0.51 2.76 -1.11" 
+                    radius="0.8" 
+                    color="#d34545"></a-sphere>
+          
+          <!-- Esfera 4 -->
+          <a-sphere position="3.25 2.76 -1.11" 
+                    radius="0.8" 
+                    color="#d34545"></a-sphere>
+        </a-entity>
         
+        <!-- ============================================ -->
+        <!-- GRUPO 5: BASE ESTRUCTURAL                    -->
+        <!-- ============================================ -->
+        <a-entity id="baseEstructural" position="0 0 0">
+          <a-box position="-0.43 1 -1.05" 
+                 width="11" height="0.3" depth="5" 
+                 color="#797779"></a-box>
+        </a-entity>
         
-        <a-box position="5 1.25 -4" 
-               width="2" height="2.5" depth="1" 
-               color="#b0abaf"></a-box>
-      </a-entity>
-      
-      <!-- Rodillos -->
-      <a-entity id="sistemaRodillos" position="0 0 0">
-        
-        <a-cylinder position="-6 1.5 -1" 
-                    radius="0.4" height="5" 
-                    rotation="90 0 0" 
-                    color="#4d4c4d"></a-cylinder>
-        
-        
-        <a-cylinder position="-3.2 1.5 -1" 
-                    radius="0.4" height="5" 
-                    rotation="90 0 0" 
-                    color="#4d4c4d"></a-cylinder>
-        
-        
-        <a-cylinder position="-0.2 1.5 -1" 
-                    radius="0.4" height="5" 
-                    rotation="90 0 0" 
-                    color="#4d4c4d"></a-cylinder>
-        
-        
-        <a-cylinder position="2.7 1.5 -1" 
-                    radius="0.4" height="5" 
-                    rotation="90 0 0" 
-                    color="#4d4c4d"></a-cylinder>
-        
-        
-        <a-cylinder position="5 1.5 -1" 
-                    radius="0.4" height="5" 
-                    rotation="90 0 0" 
-                    color="#4d4c4d"></a-cylinder>
-      </a-entity>
-      
-      <!-- Banda -->
-      <a-entity id="bandaTransportadora" position="0 0 0">
-        
-        <a-plane position="-0.4 2.02 -1" 
-                 width="11" height="5" 
-                 rotation="-90 0 0" 
-                 color="#40b041"></a-plane>
-      </a-entity>
-      
-      <!-- Esferas transportadaas -->
-      <a-entity id="esferas" position="0 0 0">
-        
-        <a-sphere position="-4.5 2.76 -1.14" 
-                  radius="0.8" 
-                  color="#d34545"></a-sphere>
-        
-        
-        <a-sphere position="-2.15 2.76 -1.13" 
-                  radius="0.8" 
-                  color="#d34545"></a-sphere>
-        
-        
-        <a-sphere position="0.51 2.76 -1.11" 
-                  radius="0.8" 
-                  color="#d34545"></a-sphere>
-        
-        
-        <a-sphere position="3.25 2.76 -1.11" 
-                  radius="0.8" 
-                  color="#d34545"></a-sphere>
-      </a-entity>
-      
-      <!-- Base de los rodillos -->
-      <a-entity id="baseEstructural" position="0 0 0">
-        <a-box position="-0.43 1 -1.05" 
-               width="11" height="0.3" depth="5" 
-               color="#797779"></a-box>
-      </a-entity>
-      
-      <!-- Entorno -->
-      <a-entity id="entorno" position="0 0 0">
-        
-        <a-plane position="0 0 -2" 
+        <!-- ============================================ -->
+        <!-- PISO (dentro del wrapper, bajo el modelo)    -->
+        <!-- ============================================ -->
+        <a-plane position="0 0 -1" 
                  width="20" height="20" 
                  rotation="-90 0 0" 
                  color="#2f3231"></a-plane>
         
-        
+      </a-entity> <!-- ✅ CIERRE DEL WRAPPER esceneIndustrial -->
+      
+      <!-- ============================================ -->
+      <!-- ENTORNO GLOBAL (FUERA del wrapper)           -->
+      <!-- El cielo debe rodear al usuario, no al modelo -->
+      <!-- ============================================ -->
+      <a-entity id="entornoGlobal">
         <a-sky color="#37646d"></a-sky>
       </a-entity>
       
-      <!-- Iluminación -->
+      <!-- ============================================ -->
+      <!-- ILUMINACIÓN                                  -->
+      <!-- ============================================ -->
       <a-light type="ambient" color="#BBBBBB"></a-light>
       <a-light type="directional" position="1 2 1" intensity="0.8"></a-light>
-      <a-entity camera="" position="0 3.82399 7.86656" wasd-controls="" rotation="-12.490479933851923 2.5210142985756296 0" look-controls="" aframe-injected=""></a-entity>
+      
+      <!-- ============================================ -->
+      <!-- CÁMARA: Simplificada para compatibilidad VR  -->
+      <!-- position="0 1.6 0" = altura promedio de ojos -->
+      <!-- look-controls + wasd-controls = interacción  -->
+      <!-- ============================================ -->
+      <a-entity camera 
+                position="0 1.6 0" 
+                look-controls 
+                wasd-controls>
+      </a-entity>
       
     </a-scene>
   </body>
